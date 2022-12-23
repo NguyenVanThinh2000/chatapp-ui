@@ -1,0 +1,56 @@
+.roomCard {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: 0.1s linear;
+
+  &:hover {
+    background-color: var(--hover-color);
+  }
+  &.active {
+    background-color: var(--hover-color);
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+  }
+  .content {
+    flex: 1;
+    display: flex;
+    .status {
+      padding-left: 10px;
+      .name {
+        font-size: 14px;
+        font-weight: 600;
+        color: var(--text1-color);
+      }
+      .last_message {
+        line-height: 2;
+        display: block;
+        display: -webkit-box;
+        font-size: 12px;
+        color: var(--text2-color);
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    .time {
+      color: var(--text2-color);
+      font-size: 13px;
+    }
+  }
+}

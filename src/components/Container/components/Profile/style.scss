@@ -1,0 +1,32 @@
+.userProfile {
+  padding-top: 20px;
+  .field {
+    width: 100%;
+    height: 40px;
+    border-radius: 8px;
+    background-color: var(--hover-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    overflow: hidden;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    .inputSearch {
+      height: 100%;
+      flex: 1;
+      border: none;
+      outline: none;
+      background-color: transparent;
+      color: var(--text2-color);
+
+      &::placeholder {
+        color: var(--text2-color);
+      }
+    }
+    .icon {
+      color: var(--text2-color);
+      cursor: pointer;
+    }
+  }
+}

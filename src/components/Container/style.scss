@@ -1,0 +1,19 @@
+.container {
+  background-color: var(--chat_bg-color);
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .wrapper {
+    height: 90%;
+    width: 90%;
+    max-width: 1200px;
+    background-color: var(--app_bg-color);
+    border-radius: 20px;
+    box-shadow: 0 0 15px 5px #dfdfdf;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+  }
+}
