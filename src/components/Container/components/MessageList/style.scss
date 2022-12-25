@@ -1,0 +1,13 @@
+.messageList {
+    height: 100%;
+    padding: 10px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: flex-start;
+    margin-top: 50px;
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

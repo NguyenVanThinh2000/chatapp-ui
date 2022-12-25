@@ -1,0 +1,38 @@
+.message-wrapper {
+    width: 100%;
+    display: flex;
+
+    .message-content {
+        padding: 16px;
+        width: fit-content;
+        background-color: white;
+        border-radius: 10px;
+        margin-top: 8px;
+        position: relative;
+        &::after {
+            position: absolute;
+            content: "";
+            width: 0px;
+            height: 0px;
+            bottom: 0;
+            left: -8px;
+            color: white;
+            border-left: 15px solid transparent;
+            border-right: 15px solid transparent;
+            border-bottom: 25px solid currentColor;
+        }
+    }
+
+    &.message-user {
+        justify-content: flex-end;
+        .message-content {
+            background-color: var(--message_bg-color);
+
+            &::after {
+                left: initial;
+                right: -8px;
+                color: var(--message_bg-color);
+            }
+        }
+    }
+}
