@@ -6,6 +6,7 @@ import "./style.scss";
 import { IMessage } from "../../../../types";
 import { RootState } from "../../../../store/store";
 import { sendMessage } from "../../../../store/slices/messageSlice";
+import dayjs from "dayjs";
 export interface IFormSendMessageProps {}
 
 export default function FormSendMessage(props: IFormSendMessageProps) {
@@ -20,13 +21,18 @@ export default function FormSendMessage(props: IFormSendMessageProps) {
 
   const handleSendMessage = (e: React.SyntheticEvent) => {
     e.preventDefault();
-    const data: IMessage = {
-      roomId: "1",
-      sendBy: user,
-      type: "text",
-      content: message,
-    };
-    dispatch(sendMessage());
+    if (message.trim() !== "") {
+      const data: IMessage = {
+        id: "1",
+        roomId: "1",
+        sendBy: user,
+        type: "text",
+        content: message.trim(),
+        timestamp: dayjs(new Date()).valueOf(),
+      };
+      dispatch(sendMessage(data));
+    }
+    setMessage("");
   };
   return (
     <div className="FormSendMessage">
@@ -39,11 +45,12 @@ export default function FormSendMessage(props: IFormSendMessageProps) {
           onChange={handleSetMessage}
         />
         <Button
+          onClick={handleSendMessage}
           className="buttonSend"
           icon={
             <SendOutlined
               style={{
-                transform: "rotate(-45deg) translateX(2px) translateY(2px)",
+                transform: "rotate(-45deg) translateX(2px) translateY(1px)",
               }}
             />
           }

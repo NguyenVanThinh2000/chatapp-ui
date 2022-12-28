@@ -16,17 +16,16 @@ export default function MessageList(props: IMessageListProps) {
 
   return (
     <div className="messageList">
-      {messageList?.map((message: IMessage, index) => {
-        if (message.type === "text") {
-          return (
+      {messageList?.map(
+        (message: IMessage, index: number) =>
+          message.type === "text" && (
             <Message
               key={index}
               content={message.content || ""}
               isUser={user.id === message.sendBy.id}
             />
-          );
-        }
-      })}
+          )
+      )}
     </div>
   );
 }

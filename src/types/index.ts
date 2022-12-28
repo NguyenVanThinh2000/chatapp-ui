@@ -13,5 +13,5 @@ export interface IMessage {
   sendBy: IUser;
   type: string;
   content: string | null;
-  createAt?: Date;
+  timestamp: number;
 }
