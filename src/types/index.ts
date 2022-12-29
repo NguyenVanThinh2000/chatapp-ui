@@ -10,7 +10,7 @@ export interface IUser {
 export interface IMessage {
   id?: string;
   roomId: string;
-  sendBy: IUser;
+  sendBy: IUser | null;
   type: string;
   content: string | null;
   timestamp: number;

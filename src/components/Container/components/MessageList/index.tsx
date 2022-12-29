@@ -22,7 +22,7 @@ export default function MessageList(props: IMessageListProps) {
             <Message
               key={index}
               content={message.content || ""}
-              isUser={user.id === message.sendBy.id}
+              isUser={user?.id === message.sendBy?.id}
             />
           )
       )}
