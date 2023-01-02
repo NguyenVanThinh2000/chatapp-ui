@@ -16,7 +16,15 @@ const Register = () => {
         <input type="email" {...register("Email", { required: true })} />
         {errors.Email && <span>This field is required</span>}
 
-        <input type="submit" />
+        <input type="password" {...register("Password", { required: true })} />
+        {errors.Password && <span>This field is required</span>}
+        <input
+          type="password"
+          {...register("ConfirmPassword", { required: true })}
+        />
+        {errors.ConfirmPassword && <span>This field is required</span>}
+
+        <button type="submit">Register</button>
       </form>
     </div>
   );
